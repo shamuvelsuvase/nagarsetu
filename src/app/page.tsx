@@ -18,7 +18,6 @@ import {
   User,
   Shield,
   Sparkles,
-  Search,
 } from "lucide-react";
 
 export default function LandingPage() {
@@ -29,60 +28,60 @@ export default function LandingPage() {
   const closeModal = () => setRoleModalOpen(false);
 
   return (
-    <div className="min-h-screen bg-white text-[#172033] flex flex-col font-sans">
+    <div className="min-h-screen bg-white text-[#172033] flex flex-col font-sans w-full overflow-x-hidden selection:bg-blue-100 selection:text-blue-900">
       {/* ====================================================================
           1. Navigation Bar
           ==================================================================== */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xs border-b border-[#E2E8F0]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#E2E8F0] w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
           {/* Logo Left */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9.5 h-9.5 rounded-lg bg-gradient-to-br from-[#163A63] to-[#2563EB] flex items-center justify-center text-white shadow-xs">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-[#163A63] to-[#2563EB] flex items-center justify-center text-white shadow-xs shrink-0">
               <div className="relative flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-white stroke-[2.2]" />
                 <Activity className="w-2.5 h-2.5 text-blue-200 absolute -bottom-0.5" />
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-[#163A63] leading-none">
+              <span className="text-lg sm:text-xl font-bold tracking-tight text-[#163A63] leading-tight">
                 CivicPulse
               </span>
-              <span className="text-[11px] font-medium text-[#4B5565] tracking-tight mt-0.5">
+              <span className="text-[10px] sm:text-[11px] font-medium text-[#4B5565] tracking-tight">
                 Smart Civic Governance
               </span>
             </div>
           </Link>
 
           {/* Nav Links Center */}
-          <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium text-[#172033]" aria-label="Main Navigation">
-            <Link href="#home" className="hover:text-[#2563EB] transition-colors">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm lg:text-[15px] font-medium text-[#172033]" aria-label="Main Navigation">
+            <Link href="#home" className="hover:text-[#2563EB] transition-colors py-1">
               Home
             </Link>
-            <Link href="#about" className="hover:text-[#2563EB] transition-colors">
+            <Link href="#about" className="hover:text-[#2563EB] transition-colors py-1">
               About
             </Link>
-            <Link href="#features" className="hover:text-[#2563EB] transition-colors">
+            <Link href="#features" className="hover:text-[#2563EB] transition-colors py-1">
               Features
             </Link>
-            <Link href="#contact" className="hover:text-[#2563EB] transition-colors">
+            <Link href="#contact" className="hover:text-[#2563EB] transition-colors py-1">
               Contact
             </Link>
           </nav>
 
           {/* Primary CTA & Mobile Hamburger */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3">
             <button
               onClick={openModal}
               type="button"
-              className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold text-sm px-4 py-2 rounded-lg shadow-xs transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold text-xs sm:text-sm px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg shadow-xs transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none"
             >
               <span>Get Started</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg border border-[#E2E8F0] text-[#163A63] hover:bg-[#F5F7FA]"
+              className="md:hidden p-2 rounded-lg border border-[#E2E8F0] text-[#163A63] hover:bg-[#F5F7FA] focus:outline-none focus:ring-2 focus:ring-blue-500"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -93,32 +92,32 @@ export default function LandingPage() {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-b border-[#E2E8F0] px-4 py-4 space-y-3">
+          <div className="md:hidden bg-white border-b border-[#E2E8F0] px-4 py-4 space-y-3 animate-in fade-in slide-in-from-top-2 duration-150">
             <Link
               href="#home"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-[#172033] py-1 border-b border-gray-100"
+              className="block text-sm font-medium text-[#172033] py-2 border-b border-gray-100"
             >
               Home
             </Link>
             <Link
               href="#about"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-[#172033] py-1 border-b border-gray-100"
+              className="block text-sm font-medium text-[#172033] py-2 border-b border-gray-100"
             >
               About
             </Link>
             <Link
               href="#features"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-[#172033] py-1 border-b border-gray-100"
+              className="block text-sm font-medium text-[#172033] py-2 border-b border-gray-100"
             >
               Features
             </Link>
             <Link
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-[#172033] py-1"
+              className="block text-sm font-medium text-[#172033] py-2"
             >
               Contact
             </Link>
@@ -126,102 +125,101 @@ export default function LandingPage() {
         )}
       </header>
 
-      <main id="home" className="flex-1">
+      <main id="home" className="flex-1 w-full">
         {/* ====================================================================
             2. Main Hero Section
             ==================================================================== */}
-        <section className="bg-white py-14 md:py-20 border-b border-[#F5F7FA]">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <section className="bg-white py-8 sm:py-12 md:py-16 lg:py-20 border-b border-[#F5F7FA]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
               
               {/* Left Column (Main Content) */}
-              <div className="lg:col-span-6 flex flex-col items-start">
+              <div className="lg:col-span-6 flex flex-col items-start w-full">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] mb-5 uppercase tracking-wide">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-                  AI-Powered Smart City Platform
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] mb-4 sm:mb-5 uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] shrink-0" />
+                  <span>AI-Powered Smart City Platform</span>
                 </div>
 
                 {/* Main Heading */}
-                <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#163A63] leading-[1.15] mb-5">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#163A63] leading-[1.18] sm:leading-[1.15] mb-4 sm:mb-5">
                   Smarter Cities Start with{" "}
                   <span className="text-[#2563EB]">Every Citizen’s Voice.</span>
                 </h1>
 
                 {/* Supporting Paragraph */}
-                <p className="text-base sm:text-lg text-[#4B5565] leading-relaxed mb-8 max-w-xl">
+                <p className="text-sm sm:text-base md:text-lg text-[#4B5565] leading-relaxed mb-6 sm:mb-8 max-w-xl">
                   CivicPulse transforms civic complaints into intelligent action. Report infrastructure problems, identify urgent incidents, and help municipal teams build safer, smarter cities.
                 </p>
 
                 {/* Single Prominent CTA */}
-                <div className="flex flex-col items-start gap-2.5">
+                <div className="flex flex-col items-start gap-2.5 w-full sm:w-auto">
                   <button
                     onClick={openModal}
                     type="button"
-                    className="inline-flex items-center justify-center gap-2.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-base px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all focus:ring-3 focus:ring-blue-400 focus:outline-none"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-base px-6 sm:px-8 py-3.5 rounded-lg shadow-sm hover:shadow transition-all focus:ring-3 focus:ring-blue-400 focus:outline-none"
                   >
                     <span>Get Started</span>
                     <ArrowRight className="w-5 h-5" />
                   </button>
-                  <span className="text-xs text-[#6B7280] font-medium tracking-normal">
+                  <span className="text-xs text-[#6B7280] font-medium tracking-normal text-left">
                     Report issues. Track progress. Improve your city.
                   </span>
                 </div>
               </div>
 
               {/* Right Column (CivicPulse Dashboard Preview) */}
-              <div className="lg:col-span-6">
-                <div className="bg-white rounded-xl border border-[#E2E8F0] shadow-md overflow-hidden flex flex-col">
+              <div className="lg:col-span-6 w-full mt-4 lg:mt-0">
+                <div className="bg-white rounded-xl border border-[#E2E8F0] shadow-md overflow-hidden flex flex-col w-full max-w-2xl mx-auto lg:max-w-none">
                   
                   {/* Card Header */}
-                  <div className="bg-[#163A63] px-4 py-3 flex items-center justify-between text-white border-b border-blue-950">
-                    <div className="flex items-center gap-2">
-                      <Building2 className="w-4 h-4 text-blue-300" />
-                      <span className="text-xs font-semibold tracking-wide">
+                  <div className="bg-[#163A63] px-3.5 sm:px-4 py-3 flex items-center justify-between text-white border-b border-blue-950">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <Building2 className="w-4 h-4 text-blue-300 shrink-0" />
+                      <span className="text-xs font-semibold tracking-wide truncate">
                         Ward 04 Command Center
                       </span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 shrink-0">
                       <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                         LIVE
                       </span>
-                      <span className="text-[11px] text-slate-300">Updated 2m ago</span>
+                      <span className="text-[10px] sm:text-[11px] text-slate-300 hidden xs:inline">Updated 2m ago</span>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 flex flex-col gap-4">
+                  <div className="p-3.5 sm:p-5 flex flex-col gap-3.5 sm:gap-4">
                     {/* Three Compact Stat Cards */}
-                    <div className="grid grid-cols-3 gap-2.5">
-                      <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg p-2.5 flex flex-col">
-                        <span className="text-[10px] font-semibold text-[#4B5565] uppercase tracking-wider">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
+                      <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg p-2 sm:p-2.5 flex flex-col justify-between">
+                        <span className="text-[9px] sm:text-[10px] font-semibold text-[#4B5565] uppercase tracking-wider leading-tight">
                           Open Complaints
                         </span>
-                        <span className="text-xl sm:text-2xl font-bold text-[#163A63] mt-0.5">
+                        <span className="text-lg sm:text-2xl font-bold text-[#163A63] mt-1">
                           128
                         </span>
                       </div>
-                      <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg p-2.5 flex flex-col">
-                        <span className="text-[10px] font-semibold text-rose-700 uppercase tracking-wider">
+                      <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg p-2 sm:p-2.5 flex flex-col justify-between">
+                        <span className="text-[9px] sm:text-[10px] font-semibold text-rose-700 uppercase tracking-wider leading-tight">
                           Critical Incidents
                         </span>
-                        <span className="text-xl sm:text-2xl font-bold text-rose-600 mt-0.5">
+                        <span className="text-lg sm:text-2xl font-bold text-rose-600 mt-1">
                           08
                         </span>
                       </div>
-                      <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg p-2.5 flex flex-col">
-                        <span className="text-[10px] font-semibold text-emerald-700 uppercase tracking-wider">
+                      <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg p-2 sm:p-2.5 flex flex-col justify-between">
+                        <span className="text-[9px] sm:text-[10px] font-semibold text-emerald-700 uppercase tracking-wider leading-tight">
                           Resolved Today
                         </span>
-                        <span className="text-xl sm:text-2xl font-bold text-emerald-600 mt-0.5">
+                        <span className="text-lg sm:text-2xl font-bold text-emerald-600 mt-1">
                           64
                         </span>
                       </div>
                     </div>
 
                     {/* Small City Incident Map Preview */}
-                    <div className="relative h-36 bg-[#EBF1F6] rounded-lg border border-[#E2E8F0] overflow-hidden">
-                      {/* Stylized vector map lines */}
+                    <div className="relative h-32 sm:h-36 bg-[#EBF1F6] rounded-lg border border-[#E2E8F0] overflow-hidden">
                       <svg className="w-full h-full" viewBox="0 0 400 144" preserveAspectRatio="none">
                         <rect width="400" height="144" fill="#E8F0F7" />
                         <path d="M 0,105 Q 120,115 200,80 T 400,90" fill="none" stroke="#BFDBFE" strokeWidth="12" />
@@ -255,49 +253,49 @@ export default function LandingPage() {
                         ✓
                       </div>
 
-                      <div className="absolute bottom-2 right-2 bg-white/90 px-2 py-0.5 rounded text-[10px] font-semibold text-[#4B5565] border border-gray-200">
+                      <div className="absolute bottom-2 right-2 bg-white/95 px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-semibold text-[#4B5565] border border-gray-200">
                         Sector 4-B GIS Heatmap
                       </div>
                     </div>
 
                     {/* Priority Incident List */}
                     <div className="space-y-1.5">
-                      <span className="text-[11px] font-bold text-[#4B5565] uppercase tracking-wider block">
+                      <span className="text-[10px] sm:text-[11px] font-bold text-[#4B5565] uppercase tracking-wider block">
                         Priority Incident List
                       </span>
 
-                      <div className="flex items-center justify-between p-2 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] text-xs">
-                        <div className="flex items-center gap-2">
-                          <AlertOctagon className="w-3.5 h-3.5 text-rose-600" />
-                          <span className="font-semibold text-[#172033]">
+                      <div className="flex items-center justify-between p-2 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] text-xs gap-2">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <AlertOctagon className="w-3.5 h-3.5 text-rose-600 shrink-0" />
+                          <span className="font-semibold text-[#172033] truncate">
                             Water Leakage — Sector 4
                           </span>
                         </div>
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-800 border border-rose-200">
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-800 border border-rose-200 shrink-0">
                           Critical
                         </span>
                       </div>
 
-                      <div className="flex items-center justify-between p-2 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] text-xs">
-                        <div className="flex items-center gap-2">
-                          <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
-                          <span className="font-semibold text-[#172033]">
+                      <div className="flex items-center justify-between p-2 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] text-xs gap-2">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <AlertTriangle className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                          <span className="font-semibold text-[#172033] truncate">
                             Road Damage — MG Avenue
                           </span>
                         </div>
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200 shrink-0">
                           High
                         </span>
                       </div>
 
-                      <div className="flex items-center justify-between p-2 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] text-xs">
-                        <div className="flex items-center gap-2">
-                          <Lightbulb className="w-3.5 h-3.5 text-blue-600" />
-                          <span className="font-semibold text-[#172033]">
+                      <div className="flex items-center justify-between p-2 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] text-xs gap-2">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <Lightbulb className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                          <span className="font-semibold text-[#172033] truncate">
                             Streetlight Failure — North Line
                           </span>
                         </div>
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200">
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200 shrink-0">
                           Medium
                         </span>
                       </div>
@@ -312,7 +310,7 @@ export default function LandingPage() {
                         <span className="font-bold text-[#2563EB] uppercase tracking-wide text-[10px] block mb-0.5">
                           AI Triage Insight
                         </span>
-                        <p className="text-[#172033] leading-tight">
+                        <p className="text-[#172033] leading-snug text-[11px] sm:text-xs">
                           Multiple reports detected near the same location. Recommended action: inspect and assign the relevant department.
                         </p>
                       </div>
@@ -332,55 +330,55 @@ export default function LandingPage() {
         {/* ====================================================================
             3. Quick Introduction
             ==================================================================== */}
-        <section className="bg-[#F5F7FA] py-16 border-b border-[#E2E8F0]" id="about">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <section className="bg-[#F5F7FA] py-12 sm:py-16 md:py-20 border-b border-[#E2E8F0]" id="about">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold tracking-tight text-[#163A63] mb-3">
+            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#163A63] mb-3">
                 One Platform. Smarter Civic Action.
               </h2>
-              <p className="text-base text-[#4B5565] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#4B5565] leading-relaxed">
                 CivicPulse connects citizens, municipal departments, and intelligent incident management in one unified platform.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6" id="features">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6" id="features">
               
               {/* Card 1 */}
-              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-xs hover:border-[#BFDBFE] hover:shadow-sm transition-all flex flex-col items-start">
-                <div className="w-12 h-12 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center mb-5">
-                  <Camera className="w-6 h-6 stroke-[1.8]" />
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-6 shadow-xs hover:border-[#BFDBFE] hover:shadow-sm transition-all flex flex-col items-start">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center mb-4 sm:mb-5 shrink-0">
+                  <Camera className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#163A63] mb-2">
+                <h3 className="text-base sm:text-lg font-bold text-[#163A63] mb-2">
                   Report Civic Issues
                 </h3>
-                <p className="text-sm text-[#4B5565] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#4B5565] leading-relaxed">
                   Submit complaints with a description, location, and optional photograph.
                 </p>
               </div>
 
               {/* Card 2 */}
-              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-xs hover:border-[#BFDBFE] hover:shadow-sm transition-all flex flex-col items-start">
-                <div className="w-12 h-12 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center mb-5">
-                  <Layers className="w-6 h-6 stroke-[1.8]" />
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-6 shadow-xs hover:border-[#BFDBFE] hover:shadow-sm transition-all flex flex-col items-start">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center mb-4 sm:mb-5 shrink-0">
+                  <Layers className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#163A63] mb-2">
+                <h3 className="text-base sm:text-lg font-bold text-[#163A63] mb-2">
                   AI-Powered Prioritization
                 </h3>
-                <p className="text-sm text-[#4B5565] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#4B5565] leading-relaxed">
                   Identify duplicate reports and prioritize urgent infrastructure problems.
                 </p>
               </div>
 
               {/* Card 3 */}
-              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-xs hover:border-[#BFDBFE] hover:shadow-sm transition-all flex flex-col items-start">
-                <div className="w-12 h-12 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center mb-5">
-                  <CheckCircle2 className="w-6 h-6 stroke-[1.8]" />
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-6 shadow-xs hover:border-[#BFDBFE] hover:shadow-sm transition-all flex flex-col items-start">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center mb-4 sm:mb-5 shrink-0">
+                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#163A63] mb-2">
+                <h3 className="text-base sm:text-lg font-bold text-[#163A63] mb-2">
                   Faster Resolution
                 </h3>
-                <p className="text-sm text-[#4B5565] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#4B5565] leading-relaxed">
                   Help municipal teams assign, track, and resolve incidents efficiently.
                 </p>
               </div>
@@ -392,26 +390,26 @@ export default function LandingPage() {
         {/* ====================================================================
             4. How It Works
             ==================================================================== */}
-        <section className="bg-white py-16 border-b border-[#E2E8F0]" id="how-it-works">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <section className="bg-white py-12 sm:py-16 md:py-20 border-b border-[#E2E8F0]" id="how-it-works">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div className="text-center max-w-xl mx-auto mb-14">
-              <h2 className="text-3xl font-bold tracking-tight text-[#163A63] mb-2">
+            <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#163A63] mb-2">
                 How It Works
               </h2>
-              <p className="text-sm text-[#4B5565]">
+              <p className="text-xs sm:text-sm text-[#4B5565]">
                 A clear four-step pipeline from complaint submission to verified repair.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
               
               {/* Step 1 */}
-              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col items-center text-center shadow-xs">
-                <div className="w-11 h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-base flex items-center justify-center mb-4 shadow-xs">
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-6 flex flex-col items-center text-center shadow-xs">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-sm sm:text-base flex items-center justify-center mb-3 sm:mb-4 shadow-xs">
                   1
                 </div>
-                <h3 className="text-base font-bold text-[#163A63] mb-1.5">
+                <h3 className="text-sm sm:text-base font-bold text-[#163A63] mb-1.5">
                   Report
                 </h3>
                 <p className="text-xs text-[#4B5565] leading-relaxed">
@@ -420,11 +418,11 @@ export default function LandingPage() {
               </div>
 
               {/* Step 2 */}
-              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col items-center text-center shadow-xs">
-                <div className="w-11 h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-base flex items-center justify-center mb-4 shadow-xs">
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-6 flex flex-col items-center text-center shadow-xs">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-sm sm:text-base flex items-center justify-center mb-3 sm:mb-4 shadow-xs">
                   2
                 </div>
-                <h3 className="text-base font-bold text-[#163A63] mb-1.5">
+                <h3 className="text-sm sm:text-base font-bold text-[#163A63] mb-1.5">
                   Analyze
                 </h3>
                 <p className="text-xs text-[#4B5565] leading-relaxed">
@@ -433,11 +431,11 @@ export default function LandingPage() {
               </div>
 
               {/* Step 3 */}
-              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col items-center text-center shadow-xs">
-                <div className="w-11 h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-base flex items-center justify-center mb-4 shadow-xs">
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-6 flex flex-col items-center text-center shadow-xs">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-sm sm:text-base flex items-center justify-center mb-3 sm:mb-4 shadow-xs">
                   3
                 </div>
-                <h3 className="text-base font-bold text-[#163A63] mb-1.5">
+                <h3 className="text-sm sm:text-base font-bold text-[#163A63] mb-1.5">
                   Prioritize
                 </h3>
                 <p className="text-xs text-[#4B5565] leading-relaxed">
@@ -446,11 +444,11 @@ export default function LandingPage() {
               </div>
 
               {/* Step 4 */}
-              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col items-center text-center shadow-xs">
-                <div className="w-11 h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-base flex items-center justify-center mb-4 shadow-xs">
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-6 flex flex-col items-center text-center shadow-xs">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-sm sm:text-base flex items-center justify-center mb-3 sm:mb-4 shadow-xs">
                   4
                 </div>
-                <h3 className="text-base font-bold text-[#163A63] mb-1.5">
+                <h3 className="text-sm sm:text-base font-bold text-[#163A63] mb-1.5">
                   Resolve
                 </h3>
                 <p className="text-xs text-[#4B5565] leading-relaxed">
@@ -465,19 +463,19 @@ export default function LandingPage() {
         {/* ====================================================================
             5. Get Started CTA Section
             ==================================================================== */}
-        <section className="bg-[#EFF6FF] py-16 border-b border-[#DBEAFE] text-center">
+        <section className="bg-[#EFF6FF] py-12 sm:py-16 md:py-20 border-b border-[#DBEAFE] text-center">
           <div className="max-w-2xl mx-auto px-4 sm:px-6 flex flex-col items-center">
-            <h2 className="text-3xl font-extrabold text-[#163A63] tracking-tight mb-3">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#163A63] tracking-tight mb-3">
               Ready to Make Your City Better?
             </h2>
-            <p className="text-base text-[#4B5565] mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base text-[#4B5565] mb-6 sm:mb-8 leading-relaxed max-w-lg">
               Start with a report and help turn civic problems into meaningful action.
             </p>
 
             <button
               onClick={openModal}
               type="button"
-              className="inline-flex items-center justify-center gap-2.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-lg px-8 py-3.5 rounded-lg shadow-sm hover:shadow transition-all focus:ring-3 focus:ring-blue-400 focus:outline-none"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-base sm:text-lg px-7 sm:px-9 py-3.5 rounded-lg shadow-sm hover:shadow transition-all focus:ring-3 focus:ring-blue-400 focus:outline-none"
             >
               <span>Get Started</span>
               <ArrowRight className="w-5 h-5" />
@@ -489,12 +487,12 @@ export default function LandingPage() {
       {/* ====================================================================
           6. Footer
           ==================================================================== */}
-      <footer className="bg-white py-10 border-t border-[#E2E8F0]" id="contact">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-gray-100">
+      <footer className="bg-white py-8 sm:py-10 border-t border-[#E2E8F0]" id="contact">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 sm:pb-8 border-b border-gray-100">
             {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#163A63] to-[#2563EB] flex items-center justify-center text-white">
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#163A63] to-[#2563EB] flex items-center justify-center text-white shrink-0">
                 <MapPin className="w-4 h-4 stroke-[2.2]" />
               </div>
               <div className="flex flex-col">
@@ -508,19 +506,19 @@ export default function LandingPage() {
             </div>
 
             {/* Links */}
-            <div className="flex items-center gap-6 text-sm text-[#4B5565] font-medium">
-              <Link href="#home" className="hover:text-[#2563EB]">Home</Link>
-              <Link href="#about" className="hover:text-[#2563EB]">About</Link>
-              <Link href="#features" className="hover:text-[#2563EB]">Features</Link>
-              <Link href="#contact" className="hover:text-[#2563EB]">Contact</Link>
+            <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-6 text-xs sm:text-sm text-[#4B5565] font-medium">
+              <Link href="#home" className="hover:text-[#2563EB] py-1">Home</Link>
+              <Link href="#about" className="hover:text-[#2563EB] py-1">About</Link>
+              <Link href="#features" className="hover:text-[#2563EB] py-1">Features</Link>
+              <Link href="#contact" className="hover:text-[#2563EB] py-1">Contact</Link>
             </div>
           </div>
 
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#6B7280]">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-[#6B7280]">
             <p>
               CivicPulse is a demonstration platform. Displayed incidents and statistics may be simulated.
             </p>
-            <p>© 2026 CivicPulse.</p>
+            <p className="shrink-0">© 2026 CivicPulse.</p>
           </div>
         </div>
       </footer>
@@ -530,26 +528,29 @@ export default function LandingPage() {
           ==================================================================== */}
       {roleModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-3 sm:p-4 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-labelledby="roleModalTitle"
+          onClick={closeModal}
         >
-          <div className="bg-white rounded-xl border border-[#E2E8F0] shadow-xl max-w-lg w-full overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            
+          <div
+            className="bg-white rounded-xl border border-[#E2E8F0] shadow-xl max-w-lg w-full overflow-hidden animate-in fade-in zoom-in-95 duration-150 my-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Header */}
-            <div className="p-5 border-b border-[#E2E8F0] bg-[#F5F7FA] flex items-center justify-between">
+            <div className="p-4 sm:p-5 border-b border-[#E2E8F0] bg-[#F5F7FA] flex items-center justify-between gap-3">
               <div>
-                <h3 id="roleModalTitle" className="text-lg font-bold text-[#163A63]">
+                <h3 id="roleModalTitle" className="text-base sm:text-lg font-bold text-[#163A63]">
                   Choose Your Role to Continue
                 </h3>
-                <p className="text-xs text-[#4B5565] mt-0.5">
+                <p className="text-[11px] sm:text-xs text-[#4B5565] mt-0.5">
                   Select your portal to access the appropriate CivicPulse workspace.
                 </p>
               </div>
               <button
                 onClick={closeModal}
-                className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-200"
+                className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-200 shrink-0"
                 aria-label="Close dialog"
               >
                 <X className="w-5 h-5" />
@@ -557,30 +558,30 @@ export default function LandingPage() {
             </div>
 
             {/* Modal Options */}
-            <div className="p-6 space-y-4">
+            <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
               
               {/* Option 1: Citizen */}
               <Link
                 href="/get-started?role=citizen"
-                className="group p-4 rounded-xl border-2 border-[#E2E8F0] hover:border-[#2563EB] bg-white hover:bg-blue-50/40 transition-all flex items-start gap-4 block"
+                className="group p-3.5 sm:p-4 rounded-xl border-2 border-[#E2E8F0] hover:border-[#2563EB] bg-white hover:bg-blue-50/40 transition-all flex items-start gap-3 sm:gap-4 block"
               >
-                <div className="w-11 h-11 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
-                  <User className="w-6 h-6 stroke-[1.8]" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
+                  <User className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-base text-[#163A63] group-hover:text-[#2563EB] transition-colors">
+                    <span className="font-bold text-sm sm:text-base text-[#163A63] group-hover:text-[#2563EB] transition-colors">
                       Citizen
                     </span>
-                    <ArrowRight className="w-4 h-4 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="w-4 h-4 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                   </div>
-                  <ul className="mt-1.5 text-xs text-[#4B5565] space-y-1">
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-[#2563EB]" />
+                  <ul className="mt-1.5 text-[11px] sm:text-xs text-[#4B5565] space-y-1">
+                    <li className="flex items-center gap-1.5 truncate">
+                      <span className="w-1 h-1 rounded-full bg-[#2563EB] shrink-0" />
                       Report a new civic issue.
                     </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-[#2563EB]" />
+                    <li className="flex items-center gap-1.5 truncate">
+                      <span className="w-1 h-1 rounded-full bg-[#2563EB] shrink-0" />
                       Track an existing complaint.
                     </li>
                   </ul>
@@ -590,25 +591,25 @@ export default function LandingPage() {
               {/* Option 2: Municipal Officer */}
               <Link
                 href="/get-started?role=officer"
-                className="group p-4 rounded-xl border-2 border-[#E2E8F0] hover:border-[#2563EB] bg-white hover:bg-blue-50/40 transition-all flex items-start gap-4 block"
+                className="group p-3.5 sm:p-4 rounded-xl border-2 border-[#E2E8F0] hover:border-[#2563EB] bg-white hover:bg-blue-50/40 transition-all flex items-start gap-3 sm:gap-4 block"
               >
-                <div className="w-11 h-11 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
-                  <Shield className="w-6 h-6 stroke-[1.8]" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
+                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-base text-[#163A63] group-hover:text-[#2563EB] transition-colors">
+                    <span className="font-bold text-sm sm:text-base text-[#163A63] group-hover:text-[#2563EB] transition-colors">
                       Municipal Officer
                     </span>
-                    <ArrowRight className="w-4 h-4 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="w-4 h-4 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                   </div>
-                  <ul className="mt-1.5 text-xs text-[#4B5565] space-y-1">
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-[#2563EB]" />
+                  <ul className="mt-1.5 text-[11px] sm:text-xs text-[#4B5565] space-y-1">
+                    <li className="flex items-center gap-1.5 truncate">
+                      <span className="w-1 h-1 rounded-full bg-[#2563EB] shrink-0" />
                       Access the command center.
                     </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-[#2563EB]" />
+                    <li className="flex items-center gap-1.5 truncate">
+                      <span className="w-1 h-1 rounded-full bg-[#2563EB] shrink-0" />
                       Review and manage incidents.
                     </li>
                   </ul>
@@ -618,9 +619,9 @@ export default function LandingPage() {
             </div>
 
             {/* Modal Footer */}
-            <div className="px-6 py-3 bg-[#F5F7FA] border-t border-[#E2E8F0] flex items-center justify-between text-[11px] text-[#6B7280]">
-              <span>Target route: <code>/get-started?role=[selected]</code></span>
-              <span>Encrypted Municipal SSL</span>
+            <div className="px-4 sm:px-6 py-3 bg-[#F5F7FA] border-t border-[#E2E8F0] flex items-center justify-between text-[10px] sm:text-[11px] text-[#6B7280]">
+              <span className="truncate">Target: <code>/get-started?role=...</code></span>
+              <span className="shrink-0 ml-2">Encrypted SSL</span>
             </div>
 
           </div>
