@@ -384,6 +384,56 @@ export default function LandingPage() {
               </div>
 
             </div>
+
+            {/* Problem Statement & Smart City Infrastructure Graphic Showcase */}
+            <div className="mt-12 bg-white rounded-2xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
+                
+                {/* Visual Image Banner */}
+                <div className="lg:col-span-7 bg-[#F8FAFC] border-b lg:border-b-0 lg:border-r border-[#E2E8F0] relative overflow-hidden flex items-center justify-center p-2 sm:p-4">
+                  <img
+                    src="/images/civic-infrastructure.jpg"
+                    alt="NagarSetu Civic Infrastructure Problem Statement and Unified Dashboard Solution"
+                    className="w-full h-auto object-cover rounded-xl shadow-xs"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-4 left-4 bg-[#163A63]/90 text-white text-[10px] sm:text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-xs">
+                    Civic Infrastructure Ecosystem
+                  </div>
+                </div>
+
+                {/* Problem & Solution Explanation */}
+                <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-center">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] uppercase tracking-wider mb-4 w-fit">
+                    The Problem & Solution
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#163A63] tracking-tight mb-3">
+                    Bridging Citizens with Urban Local Bodies
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-[#4B5565] leading-relaxed mb-5">
+                    Municipal teams typically struggle with fragmented complaints across road hazards, water main bursts, and waste bottlenecks. NagarSetu turns raw reports into actionable triage clusters with automated GIS routing.
+                  </p>
+
+                  <div className="space-y-3 border-t border-[#E2E8F0] pt-4 text-xs text-[#172033]">
+                    <div className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] mt-1.5 shrink-0" />
+                      <span><strong>Potholes & Roads:</strong> Automatic hazard grouping to prevent duplicate contractor dispatches.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-600 mt-1.5 shrink-0" />
+                      <span><strong>Water Pipeline Leaks:</strong> High-priority alerts to prevent water contamination and wastage.</span>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 shrink-0" />
+                      <span><strong>Waste Management:</strong> Real-time sanitation tracking with verified resolution proof.</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
         </section>
 
