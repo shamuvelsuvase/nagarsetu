@@ -47,7 +47,7 @@ export default function LandingPage() {
                 CivicPulse
               </span>
               <span className="text-[10px] sm:text-[11px] font-medium text-[#4B5565] tracking-tight">
-                Smart Civic Governance
+                Smarter City Faster Solution
               </span>
             </div>
           </Link>
@@ -500,7 +500,7 @@ export default function LandingPage() {
                   CivicPulse
                 </span>
                 <span className="text-[10px] text-[#4B5565]">
-                  Smart Civic Governance
+                  Smarter City Faster Solution
                 </span>
               </div>
             </div>
