@@ -36,11 +36,14 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
           {/* Logo Left */}
           <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-[#163A63] to-[#2563EB] flex items-center justify-center text-white shadow-xs shrink-0">
-              <div className="relative flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-white stroke-[2.2]" />
-                <Activity className="w-2.5 h-2.5 text-blue-200 absolute -bottom-0.5" />
-              </div>
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center shrink-0">
+              <img
+                src="/images/nagarsetu-logo.png"
+                alt="NagarSetu Logo"
+                className="w-full h-full object-contain filter drop-shadow-xs group-hover:scale-105 transition-transform"
+                width={44}
+                height={44}
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-lg sm:text-xl font-bold tracking-tight text-[#163A63] leading-tight">
@@ -622,8 +625,14 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 sm:pb-8 border-b border-gray-100">
             {/* Logo */}
             <div className="flex items-center gap-2.5 sm:gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#163A63] to-[#2563EB] flex items-center justify-center text-white shrink-0">
-                <MapPin className="w-4 h-4 stroke-[2.2]" />
+              <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center shrink-0">
+                <img
+                  src="/images/nagarsetu-logo.png"
+                  alt="NagarSetu Logo"
+                  className="w-full h-full object-contain filter drop-shadow-xs"
+                  width={40}
+                  height={40}
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-base font-bold tracking-tight text-[#163A63]">
@@ -670,13 +679,22 @@ export default function LandingPage() {
           >
             {/* Modal Header */}
             <div className="p-4 sm:p-5 border-b border-[#E2E8F0] bg-[#F5F7FA] flex items-center justify-between gap-3">
-              <div>
-                <h3 id="roleModalTitle" className="text-base sm:text-lg font-bold text-[#163A63]">
-                  Choose Your Role to Continue
-                </h3>
-                <p className="text-[11px] sm:text-xs text-[#4B5565] mt-0.5">
-                  Select your portal to access the appropriate NagarSetu workspace.
-                </p>
+              <div className="flex items-center gap-3">
+                <img
+                  src="/images/nagarsetu-logo.png"
+                  alt="NagarSetu"
+                  className="w-9 h-9 object-contain shrink-0"
+                  width={36}
+                  height={36}
+                />
+                <div>
+                  <h3 id="roleModalTitle" className="text-base sm:text-lg font-bold text-[#163A63]">
+                    Choose Your Role to Continue
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-[#4B5565] mt-0.5">
+                    Select your portal to access the appropriate NagarSetu workspace.
+                  </p>
+                </div>
               </div>
               <button
                 onClick={closeModal}

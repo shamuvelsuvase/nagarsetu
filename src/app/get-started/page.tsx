@@ -19,9 +19,18 @@ function GetStartedContent() {
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Landing Page</span>
         </Link>
-        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-          NagarSetu MVP
-        </span>
+        <div className="flex items-center gap-2">
+          <img
+            src="/images/nagarsetu-logo.png"
+            alt="NagarSetu Logo"
+            className="w-6 h-6 object-contain"
+            width={24}
+            height={24}
+          />
+          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+            NagarSetu MVP
+          </span>
+        </div>
       </div>
 
       {role === "citizen" ? (
