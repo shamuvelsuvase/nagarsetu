@@ -27,3 +27,66 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
   }
 }
+
+/* Subtle, performant civic grid & pulse animations */
+@keyframes civicPulseRing {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.92);
+    opacity: 0.35;
+  }
+}
+
+@keyframes civicFloatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+}
+
+@keyframes civicRadarSweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes civicDashMove {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-civic-pulse {
+  animation: civicPulseRing 7s ease-in-out infinite;
+}
+
+.animate-civic-float {
+  animation: civicFloatSlow 8s ease-in-out infinite;
+}
+
+.animate-civic-radar {
+  transform-origin: center;
+  animation: civicRadarSweep 18s linear infinite;
+}
+
+.animate-civic-dash {
+  animation: civicDashMove 4s linear infinite;
+}
+
+/* Smart City Interactive Dot-Matrix Grid */
+.civic-grid-pattern {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1.25px, transparent 1.25px);
+  background-size: 28px 28px;
+}

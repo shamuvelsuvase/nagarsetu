@@ -127,10 +127,77 @@ export default function LandingPage() {
 
       <main id="home" className="flex-1 w-full">
         {/* ====================================================================
-            2. Main Hero Section
+            2. Main Hero Section with Animative Background Graphics
             ==================================================================== */}
-        <section className="bg-white py-8 sm:py-12 md:py-16 lg:py-20 border-b border-[#F5F7FA]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative bg-white py-8 sm:py-12 md:py-16 lg:py-20 border-b border-[#F5F7FA] overflow-hidden">
+          {/* 1. Subtle Geolocation Dot Matrix Grid Pattern */}
+          <div className="absolute inset-0 civic-grid-pattern opacity-65 pointer-events-none" />
+
+          {/* 2. Soft Ambient Civic Blue Glow Orbs (Pulsing) */}
+          <div className="absolute top-10 left-1/4 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl pointer-events-none animate-civic-pulse -z-10" />
+          <div className="absolute bottom-5 right-10 w-[450px] h-[450px] bg-slate-100/80 rounded-full blur-3xl pointer-events-none animate-civic-float -z-10" />
+
+          {/* 3. Animative Smart-City Vector Circuitry & Radar Overlay */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none opacity-40 sm:opacity-55">
+            <svg
+              className="w-full h-full"
+              viewBox="0 0 1440 680"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid slice"
+            >
+              {/* Animated Connected Data Flow Highway */}
+              <path
+                d="M -100 120 C 300 120, 500 240, 850 190 S 1200 320, 1550 260"
+                stroke="#2563EB"
+                strokeWidth="1.5"
+                strokeDasharray="6 8"
+                className="animate-civic-dash"
+                strokeOpacity="0.4"
+              />
+              <path
+                d="M -50 480 C 250 420, 580 540, 950 440 S 1350 510, 1600 480"
+                stroke="#163A63"
+                strokeWidth="1.5"
+                strokeDasharray="8 10"
+                className="animate-civic-dash"
+                strokeOpacity="0.3"
+              />
+
+              {/* Animative Radar Sweep Rings (Smart City Geolocation Hub) */}
+              <g transform="translate(1180, 240)">
+                <circle cx="0" cy="0" r="140" stroke="#2563EB" strokeWidth="1" strokeOpacity="0.25" strokeDasharray="3 4" />
+                <circle cx="0" cy="0" r="90" stroke="#2563EB" strokeWidth="1.2" strokeOpacity="0.35" />
+                <circle cx="0" cy="0" r="40" stroke="#163A63" strokeWidth="1.5" strokeOpacity="0.45" />
+                <circle cx="0" cy="0" r="4" fill="#2563EB" />
+                {/* Rotating scanner beam */}
+                <line
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="-140"
+                  stroke="#2563EB"
+                  strokeWidth="2"
+                  strokeOpacity="0.6"
+                  className="animate-civic-radar"
+                />
+              </g>
+
+              {/* Geolocation Sensor Beacon Signals */}
+              <g transform="translate(180, 210)" className="animate-civic-float">
+                <circle cx="0" cy="0" r="28" stroke="#2563EB" strokeWidth="1" strokeOpacity="0.3" strokeDasharray="2 3" />
+                <circle cx="0" cy="0" r="14" stroke="#2563EB" strokeWidth="1.2" strokeOpacity="0.5" />
+                <circle cx="0" cy="0" r="3.5" fill="#2563EB" />
+              </g>
+
+              <g transform="translate(560, 90)" className="animate-civic-pulse">
+                <circle cx="0" cy="0" r="20" stroke="#163A63" strokeWidth="1" strokeOpacity="0.35" />
+                <circle cx="0" cy="0" r="3" fill="#163A63" />
+              </g>
+            </svg>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
               
               {/* Left Column (Main Content) */}
