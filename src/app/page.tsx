@@ -1,0 +1,631 @@
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import {
+  MapPin,
+  Activity,
+  ArrowRight,
+  Menu,
+  X,
+  Camera,
+  Layers,
+  CheckCircle2,
+  AlertTriangle,
+  AlertOctagon,
+  Lightbulb,
+  Building2,
+  User,
+  Shield,
+  Sparkles,
+  Search,
+} from "lucide-react";
+
+export default function LandingPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [roleModalOpen, setRoleModalOpen] = useState(false);
+
+  const openModal = () => setRoleModalOpen(true);
+  const closeModal = () => setRoleModalOpen(false);
+
+  return (
+    <div className="min-h-screen bg-white text-[#172033] flex flex-col font-sans">
+      {/* ====================================================================
+          1. Navigation Bar
+          ==================================================================== */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xs border-b border-[#E2E8F0]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between">
+          {/* Logo Left */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-9.5 h-9.5 rounded-lg bg-gradient-to-br from-[#163A63] to-[#2563EB] flex items-center justify-center text-white shadow-xs">
+              <div className="relative flex items-center justify-center">
+                <MapPin className="w-5 h-5 text-white stroke-[2.2]" />
+                <Activity className="w-2.5 h-2.5 text-blue-200 absolute -bottom-0.5" />
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold tracking-tight text-[#163A63] leading-none">
+                CivicPulse
+              </span>
+              <span className="text-[11px] font-medium text-[#4B5565] tracking-tight mt-0.5">
+                Smart Civic Governance
+              </span>
+            </div>
+          </Link>
+
+          {/* Nav Links Center */}
+          <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium text-[#172033]" aria-label="Main Navigation">
+            <Link href="#home" className="hover:text-[#2563EB] transition-colors">
+              Home
+            </Link>
+            <Link href="#about" className="hover:text-[#2563EB] transition-colors">
+              About
+            </Link>
+            <Link href="#features" className="hover:text-[#2563EB] transition-colors">
+              Features
+            </Link>
+            <Link href="#contact" className="hover:text-[#2563EB] transition-colors">
+              Contact
+            </Link>
+          </nav>
+
+          {/* Primary CTA & Mobile Hamburger */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={openModal}
+              type="button"
+              className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold text-sm px-4 py-2 rounded-lg shadow-xs transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            >
+              <span>Get Started</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg border border-[#E2E8F0] text-[#163A63] hover:bg-[#F5F7FA]"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-b border-[#E2E8F0] px-4 py-4 space-y-3">
+            <Link
+              href="#home"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm font-medium text-[#172033] py-1 border-b border-gray-100"
+            >
+              Home
+            </Link>
+            <Link
+              href="#about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm font-medium text-[#172033] py-1 border-b border-gray-100"
+            >
+              About
+            </Link>
+            <Link
+              href="#features"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm font-medium text-[#172033] py-1 border-b border-gray-100"
+            >
+              Features
+            </Link>
+            <Link
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm font-medium text-[#172033] py-1"
+            >
+              Contact
+            </Link>
+          </div>
+        )}
+      </header>
+
+      <main id="home" className="flex-1">
+        {/* ====================================================================
+            2. Main Hero Section
+            ==================================================================== */}
+        <section className="bg-white py-14 md:py-20 border-b border-[#F5F7FA]">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+              
+              {/* Left Column (Main Content) */}
+              <div className="lg:col-span-6 flex flex-col items-start">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] mb-5 uppercase tracking-wide">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                  AI-Powered Smart City Platform
+                </div>
+
+                {/* Main Heading */}
+                <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#163A63] leading-[1.15] mb-5">
+                  Smarter Cities Start with{" "}
+                  <span className="text-[#2563EB]">Every Citizen’s Voice.</span>
+                </h1>
+
+                {/* Supporting Paragraph */}
+                <p className="text-base sm:text-lg text-[#4B5565] leading-relaxed mb-8 max-w-xl">
+                  CivicPulse transforms civic complaints into intelligent action. Report infrastructure problems, identify urgent incidents, and help municipal teams build safer, smarter cities.
+                </p>
+
+                {/* Single Prominent CTA */}
+                <div className="flex flex-col items-start gap-2.5">
+                  <button
+                    onClick={openModal}
+                    type="button"
+                    className="inline-flex items-center justify-center gap-2.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-base px-7 py-3.5 rounded-lg shadow-sm hover:shadow transition-all focus:ring-3 focus:ring-blue-400 focus:outline-none"
+                  >
+                    <span>Get Started</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                  <span className="text-xs text-[#6B7280] font-medium tracking-normal">
+                    Report issues. Track progress. Improve your city.
+                  </span>
+                </div>
+              </div>
+
+              {/* Right Column (CivicPulse Dashboard Preview) */}
+              <div className="lg:col-span-6">
+                <div className="bg-white rounded-xl border border-[#E2E8F0] shadow-md overflow-hidden flex flex-col">
+                  
+                  {/* Card Header */}
+                  <div className="bg-[#163A63] px-4 py-3 flex items-center justify-between text-white border-b border-blue-950">
+                    <div className="flex items-center gap-2">
+                      <Building2 className="w-4 h-4 text-blue-300" />
+                      <span className="text-xs font-semibold tracking-wide">
+                        Ward 04 Command Center
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                        LIVE
+                      </span>
+                      <span className="text-[11px] text-slate-300">Updated 2m ago</span>
+                    </div>
+                  </div>
+
+                  <div className="p-4 sm:p-5 flex flex-col gap-4">
+                    {/* Three Compact Stat Cards */}
+                    <div className="grid grid-cols-3 gap-2.5">
+                      <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg p-2.5 flex flex-col">
+                        <span className="text-[10px] font-semibold text-[#4B5565] uppercase tracking-wider">
+                          Open Complaints
+                        </span>
+                        <span className="text-xl sm:text-2xl font-bold text-[#163A63] mt-0.5">
+                          128
+                        </span>
+                      </div>
+                      <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg p-2.5 flex flex-col">
+                        <span className="text-[10px] font-semibold text-rose-700 uppercase tracking-wider">
+                          Critical Incidents
+                        </span>
+                        <span className="text-xl sm:text-2xl font-bold text-rose-600 mt-0.5">
+                          08
+                        </span>
+                      </div>
+                      <div className="bg-[#F5F7FA] border border-[#E2E8F0] rounded-lg p-2.5 flex flex-col">
+                        <span className="text-[10px] font-semibold text-emerald-700 uppercase tracking-wider">
+                          Resolved Today
+                        </span>
+                        <span className="text-xl sm:text-2xl font-bold text-emerald-600 mt-0.5">
+                          64
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Small City Incident Map Preview */}
+                    <div className="relative h-36 bg-[#EBF1F6] rounded-lg border border-[#E2E8F0] overflow-hidden">
+                      {/* Stylized vector map lines */}
+                      <svg className="w-full h-full" viewBox="0 0 400 144" preserveAspectRatio="none">
+                        <rect width="400" height="144" fill="#E8F0F7" />
+                        <path d="M 0,105 Q 120,115 200,80 T 400,90" fill="none" stroke="#BFDBFE" strokeWidth="12" />
+                        <path d="M 50,0 L 50,144 M 160,0 L 160,144 M 270,0 L 270,144 M 350,0 L 350,144" stroke="#CBD5E1" strokeWidth="2" />
+                        <path d="M 0,40 L 400,40 M 0,90 L 400,90 M 0,125 L 400,125" stroke="#CBD5E1" strokeWidth="2" />
+                      </svg>
+
+                      {/* Map Pins */}
+                      <div
+                        className="absolute top-1/4 left-1/3 w-5 h-5 rounded-full bg-rose-600 text-white text-[10px] font-bold flex items-center justify-center border-2 border-white shadow-sm"
+                        title="Critical: Water Main Burst"
+                      >
+                        !
+                      </div>
+                      <div
+                        className="absolute top-2/3 left-2/3 w-5 h-5 rounded-full bg-amber-500 text-white text-[10px] font-bold flex items-center justify-center border-2 border-white shadow-sm"
+                        title="High: Road Damage"
+                      >
+                        !
+                      </div>
+                      <div
+                        className="absolute top-1/3 left-3/4 w-5 h-5 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center border-2 border-white shadow-sm"
+                        title="Medium: Streetlight Failure"
+                      >
+                        •
+                      </div>
+                      <div
+                        className="absolute top-3/4 left-1/5 w-5 h-5 rounded-full bg-emerald-600 text-white text-[10px] font-bold flex items-center justify-center border-2 border-white shadow-sm"
+                        title="Resolved Incident"
+                      >
+                        ✓
+                      </div>
+
+                      <div className="absolute bottom-2 right-2 bg-white/90 px-2 py-0.5 rounded text-[10px] font-semibold text-[#4B5565] border border-gray-200">
+                        Sector 4-B GIS Heatmap
+                      </div>
+                    </div>
+
+                    {/* Priority Incident List */}
+                    <div className="space-y-1.5">
+                      <span className="text-[11px] font-bold text-[#4B5565] uppercase tracking-wider block">
+                        Priority Incident List
+                      </span>
+
+                      <div className="flex items-center justify-between p-2 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] text-xs">
+                        <div className="flex items-center gap-2">
+                          <AlertOctagon className="w-3.5 h-3.5 text-rose-600" />
+                          <span className="font-semibold text-[#172033]">
+                            Water Leakage — Sector 4
+                          </span>
+                        </div>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-800 border border-rose-200">
+                          Critical
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between p-2 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] text-xs">
+                        <div className="flex items-center gap-2">
+                          <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
+                          <span className="font-semibold text-[#172033]">
+                            Road Damage — MG Avenue
+                          </span>
+                        </div>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">
+                          High
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between p-2 rounded-lg bg-[#F5F7FA] border border-[#E2E8F0] text-xs">
+                        <div className="flex items-center gap-2">
+                          <Lightbulb className="w-3.5 h-3.5 text-blue-600" />
+                          <span className="font-semibold text-[#172033]">
+                            Streetlight Failure — North Line
+                          </span>
+                        </div>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200">
+                          Medium
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* AI Insight Panel */}
+                    <div className="bg-[#F8FAFC] border border-[#CBD5E1] border-l-4 border-l-[#2563EB] rounded-lg p-2.5 flex items-start gap-2.5">
+                      <div className="w-5 h-5 rounded bg-blue-100 text-[#2563EB] flex items-center justify-center shrink-0 mt-0.5">
+                        <Sparkles className="w-3 h-3" />
+                      </div>
+                      <div className="text-xs">
+                        <span className="font-bold text-[#2563EB] uppercase tracking-wide text-[10px] block mb-0.5">
+                          AI Triage Insight
+                        </span>
+                        <p className="text-[#172033] leading-tight">
+                          Multiple reports detected near the same location. Recommended action: inspect and assign the relevant department.
+                        </p>
+                      </div>
+                    </div>
+
+                    <p className="text-center text-[10px] text-[#6B7280]">
+                      Illustrative demo statistics, not live municipal data.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ====================================================================
+            3. Quick Introduction
+            ==================================================================== */}
+        <section className="bg-[#F5F7FA] py-16 border-b border-[#E2E8F0]" id="about">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-[#163A63] mb-3">
+                One Platform. Smarter Civic Action.
+              </h2>
+              <p className="text-base text-[#4B5565] leading-relaxed">
+                CivicPulse connects citizens, municipal departments, and intelligent incident management in one unified platform.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6" id="features">
+              
+              {/* Card 1 */}
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-xs hover:border-[#BFDBFE] hover:shadow-sm transition-all flex flex-col items-start">
+                <div className="w-12 h-12 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center mb-5">
+                  <Camera className="w-6 h-6 stroke-[1.8]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#163A63] mb-2">
+                  Report Civic Issues
+                </h3>
+                <p className="text-sm text-[#4B5565] leading-relaxed">
+                  Submit complaints with a description, location, and optional photograph.
+                </p>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-xs hover:border-[#BFDBFE] hover:shadow-sm transition-all flex flex-col items-start">
+                <div className="w-12 h-12 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center mb-5">
+                  <Layers className="w-6 h-6 stroke-[1.8]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#163A63] mb-2">
+                  AI-Powered Prioritization
+                </h3>
+                <p className="text-sm text-[#4B5565] leading-relaxed">
+                  Identify duplicate reports and prioritize urgent infrastructure problems.
+                </p>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-xs hover:border-[#BFDBFE] hover:shadow-sm transition-all flex flex-col items-start">
+                <div className="w-12 h-12 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center mb-5">
+                  <CheckCircle2 className="w-6 h-6 stroke-[1.8]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#163A63] mb-2">
+                  Faster Resolution
+                </h3>
+                <p className="text-sm text-[#4B5565] leading-relaxed">
+                  Help municipal teams assign, track, and resolve incidents efficiently.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ====================================================================
+            4. How It Works
+            ==================================================================== */}
+        <section className="bg-white py-16 border-b border-[#E2E8F0]" id="how-it-works">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            
+            <div className="text-center max-w-xl mx-auto mb-14">
+              <h2 className="text-3xl font-bold tracking-tight text-[#163A63] mb-2">
+                How It Works
+              </h2>
+              <p className="text-sm text-[#4B5565]">
+                A clear four-step pipeline from complaint submission to verified repair.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+              
+              {/* Step 1 */}
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col items-center text-center shadow-xs">
+                <div className="w-11 h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-base flex items-center justify-center mb-4 shadow-xs">
+                  1
+                </div>
+                <h3 className="text-base font-bold text-[#163A63] mb-1.5">
+                  Report
+                </h3>
+                <p className="text-xs text-[#4B5565] leading-relaxed">
+                  Submit a civic complaint.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col items-center text-center shadow-xs">
+                <div className="w-11 h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-base flex items-center justify-center mb-4 shadow-xs">
+                  2
+                </div>
+                <h3 className="text-base font-bold text-[#163A63] mb-1.5">
+                  Analyze
+                </h3>
+                <p className="text-xs text-[#4B5565] leading-relaxed">
+                  AI classifies and groups related reports.
+                </p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col items-center text-center shadow-xs">
+                <div className="w-11 h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-base flex items-center justify-center mb-4 shadow-xs">
+                  3
+                </div>
+                <h3 className="text-base font-bold text-[#163A63] mb-1.5">
+                  Prioritize
+                </h3>
+                <p className="text-xs text-[#4B5565] leading-relaxed">
+                  Incidents receive an explainable urgency score.
+                </p>
+              </div>
+
+              {/* Step 4 */}
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 flex flex-col items-center text-center shadow-xs">
+                <div className="w-11 h-11 rounded-full border-2 border-[#2563EB] bg-[#EFF6FF] text-[#2563EB] font-bold text-base flex items-center justify-center mb-4 shadow-xs">
+                  4
+                </div>
+                <h3 className="text-base font-bold text-[#163A63] mb-1.5">
+                  Resolve
+                </h3>
+                <p className="text-xs text-[#4B5565] leading-relaxed">
+                  Municipal teams receive assignments and track repairs.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ====================================================================
+            5. Get Started CTA Section
+            ==================================================================== */}
+        <section className="bg-[#EFF6FF] py-16 border-b border-[#DBEAFE] text-center">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 flex flex-col items-center">
+            <h2 className="text-3xl font-extrabold text-[#163A63] tracking-tight mb-3">
+              Ready to Make Your City Better?
+            </h2>
+            <p className="text-base text-[#4B5565] mb-8 leading-relaxed">
+              Start with a report and help turn civic problems into meaningful action.
+            </p>
+
+            <button
+              onClick={openModal}
+              type="button"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-lg px-8 py-3.5 rounded-lg shadow-sm hover:shadow transition-all focus:ring-3 focus:ring-blue-400 focus:outline-none"
+            >
+              <span>Get Started</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </section>
+      </main>
+
+      {/* ====================================================================
+          6. Footer
+          ==================================================================== */}
+      <footer className="bg-white py-10 border-t border-[#E2E8F0]" id="contact">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-gray-100">
+            {/* Logo */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#163A63] to-[#2563EB] flex items-center justify-center text-white">
+                <MapPin className="w-4 h-4 stroke-[2.2]" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-base font-bold tracking-tight text-[#163A63]">
+                  CivicPulse
+                </span>
+                <span className="text-[10px] text-[#4B5565]">
+                  Smart Civic Governance
+                </span>
+              </div>
+            </div>
+
+            {/* Links */}
+            <div className="flex items-center gap-6 text-sm text-[#4B5565] font-medium">
+              <Link href="#home" className="hover:text-[#2563EB]">Home</Link>
+              <Link href="#about" className="hover:text-[#2563EB]">About</Link>
+              <Link href="#features" className="hover:text-[#2563EB]">Features</Link>
+              <Link href="#contact" className="hover:text-[#2563EB]">Contact</Link>
+            </div>
+          </div>
+
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#6B7280]">
+            <p>
+              CivicPulse is a demonstration platform. Displayed incidents and statistics may be simulated.
+            </p>
+            <p>© 2026 CivicPulse.</p>
+          </div>
+        </div>
+      </footer>
+
+      {/* ====================================================================
+          7. Role Selection Modal (Citizen vs Municipal Officer)
+          ==================================================================== */}
+      {roleModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="roleModalTitle"
+        >
+          <div className="bg-white rounded-xl border border-[#E2E8F0] shadow-xl max-w-lg w-full overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            
+            {/* Modal Header */}
+            <div className="p-5 border-b border-[#E2E8F0] bg-[#F5F7FA] flex items-center justify-between">
+              <div>
+                <h3 id="roleModalTitle" className="text-lg font-bold text-[#163A63]">
+                  Choose Your Role to Continue
+                </h3>
+                <p className="text-xs text-[#4B5565] mt-0.5">
+                  Select your portal to access the appropriate CivicPulse workspace.
+                </p>
+              </div>
+              <button
+                onClick={closeModal}
+                className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-200"
+                aria-label="Close dialog"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Modal Options */}
+            <div className="p-6 space-y-4">
+              
+              {/* Option 1: Citizen */}
+              <Link
+                href="/get-started?role=citizen"
+                className="group p-4 rounded-xl border-2 border-[#E2E8F0] hover:border-[#2563EB] bg-white hover:bg-blue-50/40 transition-all flex items-start gap-4 block"
+              >
+                <div className="w-11 h-11 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
+                  <User className="w-6 h-6 stroke-[1.8]" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-base text-[#163A63] group-hover:text-[#2563EB] transition-colors">
+                      Citizen
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <ul className="mt-1.5 text-xs text-[#4B5565] space-y-1">
+                    <li className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-[#2563EB]" />
+                      Report a new civic issue.
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-[#2563EB]" />
+                      Track an existing complaint.
+                    </li>
+                  </ul>
+                </div>
+              </Link>
+
+              {/* Option 2: Municipal Officer */}
+              <Link
+                href="/get-started?role=officer"
+                className="group p-4 rounded-xl border-2 border-[#E2E8F0] hover:border-[#2563EB] bg-white hover:bg-blue-50/40 transition-all flex items-start gap-4 block"
+              >
+                <div className="w-11 h-11 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center shrink-0">
+                  <Shield className="w-6 h-6 stroke-[1.8]" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-base text-[#163A63] group-hover:text-[#2563EB] transition-colors">
+                      Municipal Officer
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <ul className="mt-1.5 text-xs text-[#4B5565] space-y-1">
+                    <li className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-[#2563EB]" />
+                      Access the command center.
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-[#2563EB]" />
+                      Review and manage incidents.
+                    </li>
+                  </ul>
+                </div>
+              </Link>
+
+            </div>
+
+            {/* Modal Footer */}
+            <div className="px-6 py-3 bg-[#F5F7FA] border-t border-[#E2E8F0] flex items-center justify-between text-[11px] text-[#6B7280]">
+              <span>Target route: <code>/get-started?role=[selected]</code></span>
+              <span>Encrypted Municipal SSL</span>
+            </div>
+
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
