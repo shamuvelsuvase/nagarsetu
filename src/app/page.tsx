@@ -44,7 +44,7 @@ export default function LandingPage() {
             </div>
             <div className="flex flex-col">
               <span className="text-lg sm:text-xl font-bold tracking-tight text-[#163A63] leading-tight">
-                CivicPulse
+                NagarSetu
               </span>
               <span className="text-[10px] sm:text-[11px] font-medium text-[#4B5565] tracking-tight">
                 Smarter City Faster Solution
@@ -149,7 +149,7 @@ export default function LandingPage() {
 
                 {/* Supporting Paragraph */}
                 <p className="text-sm sm:text-base md:text-lg text-[#4B5565] leading-relaxed mb-6 sm:mb-8 max-w-xl">
-                  CivicPulse transforms civic complaints into intelligent action. Report infrastructure problems, identify urgent incidents, and help municipal teams build safer, smarter cities.
+                  NagarSetu transforms civic complaints into intelligent action. Report infrastructure problems, identify urgent incidents, and help municipal teams build safer, smarter cities.
                 </p>
 
                 {/* Single Prominent CTA */}
@@ -338,7 +338,7 @@ export default function LandingPage() {
                 One Platform. Smarter Civic Action.
               </h2>
               <p className="text-sm sm:text-base text-[#4B5565] leading-relaxed">
-                CivicPulse connects citizens, municipal departments, and intelligent incident management in one unified platform.
+                NagarSetu connects citizens, municipal departments, and intelligent incident management in one unified platform.
               </p>
             </div>
 
@@ -497,7 +497,7 @@ export default function LandingPage() {
               </div>
               <div className="flex flex-col">
                 <span className="text-base font-bold tracking-tight text-[#163A63]">
-                  CivicPulse
+                  NagarSetu
                 </span>
                 <span className="text-[10px] text-[#4B5565]">
                   Smarter City Faster Solution
@@ -516,9 +516,9 @@ export default function LandingPage() {
 
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-[#6B7280]">
             <p>
-              CivicPulse is a demonstration platform. Displayed incidents and statistics may be simulated.
+              NagarSetu is a demonstration platform. Displayed incidents and statistics may be simulated.
             </p>
-            <p className="shrink-0">© 2026 CivicPulse.</p>
+            <p className="shrink-0">© 2026 NagarSetu.</p>
           </div>
         </div>
       </footer>
@@ -545,7 +545,7 @@ export default function LandingPage() {
                   Choose Your Role to Continue
                 </h3>
                 <p className="text-[11px] sm:text-xs text-[#4B5565] mt-0.5">
-                  Select your portal to access the appropriate CivicPulse workspace.
+                  Select your portal to access the appropriate NagarSetu workspace.
                 </p>
               </div>
               <button

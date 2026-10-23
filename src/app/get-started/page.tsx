@@ -20,7 +20,7 @@ function GetStartedContent() {
           <span>Back to Landing Page</span>
         </Link>
         <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-          CivicPulse MVP
+          NagarSetu MVP
         </span>
       </div>
 
@@ -132,7 +132,7 @@ function GetStartedContent() {
 export default function GetStartedPage() {
   return (
     <div className="min-h-screen bg-[#F5F7FA] flex items-center justify-center p-4">
-      <Suspense fallback={<div className="text-sm text-gray-500">Loading CivicPulse...</div>}>
+      <Suspense fallback={<div className="text-sm text-gray-500">Loading NagarSetu...</div>}>
         <GetStartedContent />
       </Suspense>
     </div>
