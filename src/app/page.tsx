@@ -130,12 +130,25 @@ export default function LandingPage() {
             2. Main Hero Section with Animative Background Graphics
             ==================================================================== */}
         <section className="relative bg-white py-8 sm:py-12 md:py-16 lg:py-20 border-b border-[#F5F7FA] overflow-hidden">
+          {/* 0. High-Quality Smart City & NagarSetu Bridge Blueprint Graphic (Low Opacity Backdrop) */}
+          <div className="absolute inset-0 pointer-events-none select-none overflow-hidden -z-20">
+            <img
+              src="/images/nagarsetu-hero-city-backdrop.jpg"
+              alt=""
+              className="w-full h-full object-cover object-center opacity-[0.12] sm:opacity-[0.16] mix-blend-multiply filter contrast-125"
+              aria-hidden="true"
+            />
+            {/* Smooth Edge Fade Gradients to seamlessly blend into #FFFFFF */}
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/70" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-transparent to-white/60" />
+          </div>
+
           {/* 1. Subtle Geolocation Dot Matrix Grid Pattern */}
-          <div className="absolute inset-0 civic-grid-pattern opacity-65 pointer-events-none" />
+          <div className="absolute inset-0 civic-grid-pattern opacity-60 pointer-events-none" />
 
           {/* 2. Soft Ambient Civic Blue Glow Orbs (Pulsing) */}
-          <div className="absolute top-10 left-1/4 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl pointer-events-none animate-civic-pulse -z-10" />
-          <div className="absolute bottom-5 right-10 w-[450px] h-[450px] bg-slate-100/80 rounded-full blur-3xl pointer-events-none animate-civic-float -z-10" />
+          <div className="absolute top-10 left-1/4 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl pointer-events-none animate-civic-pulse -z-10" />
+          <div className="absolute bottom-5 right-10 w-[450px] h-[450px] bg-slate-100/70 rounded-full blur-3xl pointer-events-none animate-civic-float -z-10" />
 
           {/* 3. Animative Smart-City Vector Circuitry & Radar Overlay */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden select-none opacity-40 sm:opacity-55">
